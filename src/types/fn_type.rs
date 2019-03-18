@@ -1,4 +1,4 @@
-use llvm_sys::core::{LLVMGetParamTypes, LLVMIsFunctionVarArg, LLVMCountParamTypes};
+use llvm_sys::core::{LLVMGetParamTypes, LLVMIsFunctionVarArg, LLVMCountParamTypes, LLVMGetReturnType};
 use llvm_sys::prelude::LLVMTypeRef;
 
 use std::fmt;
@@ -165,6 +165,15 @@ impl FunctionType {
     #[llvm_versions(3.7 => 4.0)]
     pub fn print_to_stderr(&self) {
         self.fn_type.print_to_stderr()
+    }
+
+    /// Gets the return type of the function type.
+    pub fn get_return_type(&self) -> BasicTypeEnum {
+        let type_ = unsafe {
+            LLVMGetReturnType(self.fn_type.type_)
+        };
+
+        BasicTypeEnum::new(type_)
     }
 
     // REVIEW: Can you do undef for functions?

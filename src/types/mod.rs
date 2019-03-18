@@ -49,7 +49,7 @@ use values::IntValue;
 // Though this is likely only true per thread since LLVM claims to not be very thread-safe.
 #[derive(PartialEq, Eq, Clone, Copy, Hash)]
 struct Type {
-    type_: LLVMTypeRef,
+    pub(crate) type_: LLVMTypeRef,
 }
 
 impl Type {
