@@ -10,7 +10,7 @@ use types::{Type, PointerType, FunctionType, BasicTypeEnum, ArrayType, VectorTyp
 use values::{AsValueRef, ArrayValue, FloatValue, GenericValue, IntValue};
 
 /// A `FloatType` is the type of a floating point constant or variable.
-#[derive(Debug, PartialEq, Eq, Clone, Copy)]
+#[derive(Debug, PartialEq, Eq, Clone, Copy, Hash)]
 pub struct FloatType {
     float_type: Type,
 }

@@ -9,7 +9,7 @@ use types::{Type, BasicTypeEnum, FunctionType, PointerType};
 
 /// A `VoidType` is a special type with no possible direct instances. It's particularly
 /// useful as a pointer element type or a function return type.
-#[derive(Debug, PartialEq, Eq, Clone, Copy)]
+#[derive(Debug, PartialEq, Eq, Clone, Copy, Hash)]
 pub struct VoidType {
     void_type: Type,
 }

@@ -12,7 +12,7 @@ use types::{PointerType, Type, BasicTypeEnum};
 
 // REVIEW: Add a get_return_type() -> Option<BasicTypeEnum>?
 /// A `FunctionType` is the type of a function variable.
-#[derive(PartialEq, Eq, Clone, Copy)]
+#[derive(PartialEq, Eq, Clone, Copy, Hash)]
 pub struct FunctionType {
     fn_type: Type,
 }

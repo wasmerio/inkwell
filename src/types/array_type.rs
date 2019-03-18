@@ -9,7 +9,7 @@ use types::{Type, BasicTypeEnum, PointerType, FunctionType};
 use values::{AsValueRef, ArrayValue, IntValue};
 
 /// An `ArrayType` is the type of contiguous constants or variables.
-#[derive(Debug, PartialEq, Eq, Clone, Copy)]
+#[derive(Debug, PartialEq, Eq, Clone, Copy, Hash)]
 pub struct ArrayType {
     array_type: Type,
 }

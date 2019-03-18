@@ -10,7 +10,7 @@ use types::{Type, ArrayType, BasicTypeEnum, VectorType, PointerType, FunctionTyp
 use values::{AsValueRef, ArrayValue, GenericValue, IntValue};
 
 /// An `IntType` is the type of an integer constant or variable.
-#[derive(Debug, PartialEq, Eq, Clone, Copy)]
+#[derive(Debug, PartialEq, Eq, Clone, Copy, Hash)]
 pub struct IntType {
     int_type: Type,
 }

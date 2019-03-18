@@ -8,7 +8,7 @@ use types::{ArrayType, BasicTypeEnum, Type, traits::AsTypeRef, FunctionType, Poi
 use values::{AsValueRef, ArrayValue, BasicValue, VectorValue, IntValue};
 
 /// A `VectorType` is the type of a multiple value SIMD constant or variable.
-#[derive(Debug, PartialEq, Eq, Clone, Copy)]
+#[derive(Debug, PartialEq, Eq, Clone, Copy, Hash)]
 pub struct VectorType {
     vec_type: Type,
 }

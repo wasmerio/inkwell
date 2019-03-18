@@ -9,7 +9,7 @@ use types::{AnyTypeEnum, Type, BasicTypeEnum, ArrayType, FunctionType, VectorTyp
 use values::{AsValueRef, ArrayValue, PointerValue, IntValue};
 
 /// A `PointerType` is the type of a pointer constant or variable.
-#[derive(Debug, PartialEq, Eq, Clone, Copy)]
+#[derive(Debug, PartialEq, Eq, Clone, Copy, Hash)]
 pub struct PointerType {
     ptr_type: Type,
 }

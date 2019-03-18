@@ -14,7 +14,7 @@ use types::{Type, BasicTypeEnum, ArrayType, PointerType, FunctionType, VectorTyp
 use values::{ArrayValue, BasicValueEnum, StructValue, IntValue, AsValueRef};
 
 /// A `StructType` is the type of a heterogeneous container of types.
-#[derive(Debug, PartialEq, Eq, Clone, Copy)]
+#[derive(Debug, PartialEq, Eq, Clone, Copy, Hash)]
 pub struct StructType {
     struct_type: Type,
 }
