@@ -95,6 +95,11 @@ impl BasicBlock {
     /// assert_eq!(basic_block3.get_previous_basic_block().unwrap(), basic_block2);
     /// ```
     pub fn get_previous_basic_block(&self) -> Option<BasicBlock> {
+        // This method is UB if the block is detached from the parent, so we must check for parent (or encode into type system)
+        if !self.get_parent().is_some() {
+            return None;
+        }
+
         let bb = unsafe {
             LLVMGetPreviousBasicBlock(self.basic_block)
         };
@@ -130,6 +135,11 @@ impl BasicBlock {
     /// assert!(basic_block3.get_next_basic_block().is_none());
     /// ```
     pub fn get_next_basic_block(&self) -> Option<BasicBlock> {
+        // This method is UB if the block is detached from the parent, so we must check for parent (or encode into type system)
+        if !self.get_parent().is_some() {
+            return None;
+        }
+
         let bb = unsafe {
             LLVMGetNextBasicBlock(self.basic_block)
         };
@@ -320,15 +330,8 @@ impl BasicBlock {
     // TODOC: Every BB must have a terminating instruction or else it is invalid
     // REVIEW: Unclear how this differs from get_last_instruction
     pub fn get_terminator(&self) -> Option<InstructionValue> {
-        let value = unsafe {
-            LLVMGetBasicBlockTerminator(self.basic_block)
-        };
-
-        if value.is_null() {
-            return None;
-        }
-
-        Some(InstructionValue::new(value))
+        // TODOC: If we ever grow a TerminatorInstructionValue, cast to that here.
+        return self.get_last_instruction();
     }
 
     /// Removes this `BasicBlock` from its parent `FunctionValue`. Does nothing if it has no parent.
