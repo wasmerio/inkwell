@@ -82,7 +82,7 @@ impl PassManagerBuilder {
     ///
     /// # Example
     ///
-    /// ```
+    /// ```no_run
     /// use inkwell::OptimizationLevel::Aggressive;
     /// use inkwell::module::Module;
     /// use inkwell::passes::{PassManager, PassManagerBuilder};
@@ -107,7 +107,7 @@ impl PassManagerBuilder {
     ///
     /// # Example
     ///
-    /// ```
+    /// ```no_run
     /// use inkwell::OptimizationLevel::Aggressive;
     /// use inkwell::passes::{PassManager, PassManagerBuilder};
     /// use inkwell::targets::{InitializationConfig, Target};
@@ -133,7 +133,7 @@ impl PassManagerBuilder {
     ///
     /// # Example
     ///
-    /// ```
+    /// ```no_run
     /// use inkwell::OptimizationLevel::Aggressive;
     /// use inkwell::passes::{PassManager, PassManagerBuilder};
     /// use inkwell::targets::{InitializationConfig, Target};
@@ -209,6 +209,21 @@ pub struct PassManager<T> {
     sub_type: PhantomData<T>,
 }
 
+impl PassManager<FunctionValue> {
+    // return true means some pass modified the module, not an error occurred
+    pub fn initialize(&self) -> bool {
+        unsafe {
+            LLVMInitializeFunctionPassManager(self.pass_manager) == 1
+        }
+    }
+
+    pub fn finalize(&self) -> bool {
+        unsafe {
+            LLVMFinalizeFunctionPassManager(self.pass_manager) == 1
+        }
+    }
+}
+
 impl<T: PassManagerSubType> PassManager<T> {
     pub(crate) fn new(pass_manager: LLVMPassManagerRef) -> Self {
         assert!(!pass_manager.is_null());
@@ -225,19 +240,6 @@ impl<T: PassManagerSubType> PassManager<T> {
         };
 
         PassManager::new(pass_manager)
-    }
-
-    // return true means some pass modified the module, not an error occurred
-    pub fn initialize(&self) -> bool {
-        unsafe {
-            LLVMInitializeFunctionPassManager(self.pass_manager) == 1
-        }
-    }
-
-    pub fn finalize(&self) -> bool {
-        unsafe {
-            LLVMFinalizeFunctionPassManager(self.pass_manager) == 1
-        }
     }
 
     /// This method returns true if any of the passes modified the function or module
@@ -433,7 +435,7 @@ impl<T: PassManagerSubType> PassManager<T> {
     /// for each pair of compatible instructions. These heuristics
     /// are intended to prevent vectorization in cases where it would
     /// not yield a performance increase of the resulting code.
-    #[llvm_versions(3.6..=6.0)]
+    #[llvm_versions(3.6..=4.0)]
     pub fn add_bb_vectorize_pass(&self) {
         use llvm_sys::transforms::vectorize::LLVMAddBBVectorizePass;
 
@@ -1046,16 +1048,11 @@ impl<T: PassManagerSubType> PassManager<T> {
         }
     }
 
-    #[llvm_versions(7.0)]
+    #[llvm_versions(7.0..=latest)]
     pub fn add_aggressive_inst_combiner_pass(&self) {
+        #[cfg(feature = "llvm7-0")]
         use llvm_sys::transforms::scalar::LLVMAddAggressiveInstCombinerPass;
-
-        unsafe {
-            LLVMAddAggressiveInstCombinerPass(self.pass_manager)
-        }
-    }
-    #[llvm_versions(8.0..=latest)]
-    pub fn add_aggressive_inst_combiner_pass(&self) {
+        #[cfg(not(feature = "llvm7-0"))]
         use llvm_sys::transforms::aggressive_instcombine::LLVMAddAggressiveInstCombinerPass;
 
         unsafe {
@@ -1063,13 +1060,48 @@ impl<T: PassManagerSubType> PassManager<T> {
         }
     }
 
-
     #[llvm_versions(7.0..=latest)]
     pub fn add_loop_unroll_and_jam_pass(&self) {
         use llvm_sys::transforms::scalar::LLVMAddLoopUnrollAndJamPass;
 
         unsafe {
             LLVMAddLoopUnrollAndJamPass(self.pass_manager)
+        }
+    }
+
+    #[llvm_versions(8.0..=latest)]
+    pub fn add_coroutine_early_pass(&self) {
+        use llvm_sys::transforms::coroutines::LLVMAddCoroEarlyPass;
+
+        unsafe {
+            LLVMAddCoroEarlyPass(self.pass_manager)
+        }
+    }
+
+    #[llvm_versions(8.0..=latest)]
+    pub fn add_coroutine_split_pass(&self) {
+        use llvm_sys::transforms::coroutines::LLVMAddCoroSplitPass;
+
+        unsafe {
+            LLVMAddCoroSplitPass(self.pass_manager)
+        }
+    }
+
+    #[llvm_versions(8.0..=latest)]
+    pub fn add_coroutine_elide_pass(&self) {
+        use llvm_sys::transforms::coroutines::LLVMAddCoroElidePass;
+
+        unsafe {
+            LLVMAddCoroElidePass(self.pass_manager)
+        }
+    }
+
+    #[llvm_versions(8.0..=latest)]
+    pub fn add_coroutine_cleanup_pass(&self) {
+        use llvm_sys::transforms::coroutines::LLVMAddCoroCleanupPass;
+
+        unsafe {
+            LLVMAddCoroCleanupPass(self.pass_manager)
         }
     }
 }

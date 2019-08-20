@@ -22,17 +22,7 @@ pub enum FunctionLookupError {
     FunctionNotFound, // 404!
 }
 
-impl Error for FunctionLookupError {
-    // This method is deprecated on nighty so it's probably not
-    // something we should worry about
-    fn description(&self) -> &str {
-        self.as_str()
-    }
-
-    fn cause(&self) -> Option<&dyn Error> {
-        None
-    }
-}
+impl Error for FunctionLookupError {}
 
 impl FunctionLookupError {
     fn as_str(&self) -> &str {
@@ -265,7 +255,7 @@ impl ExecutionEngine {
     /// # Examples
     ///
     ///
-    /// ```rust
+    /// ```rust,no_run
     /// # use inkwell::targets::{InitializationConfig, Target};
     /// # use inkwell::context::Context;
     /// # use inkwell::OptimizationLevel;
@@ -316,7 +306,7 @@ impl ExecutionEngine {
             return Err(FunctionLookupError::JITNotEnabled);
         }
 
-         // LLVMGetFunctionAddress segfaults in llvm 5.0 -> 8.0 when fn_name doesn't exist. This is a workaround
+        // LLVMGetFunctionAddress segfaults in llvm 5.0 -> 8.0 when fn_name doesn't exist. This is a workaround
         // to see if it exists and avoid the segfault when it doesn't
         #[cfg(any(feature = "llvm5-0", feature = "llvm6-0", feature = "llvm7-0", feature = "llvm8-0"))]
         self.get_function_value(fn_name)?;

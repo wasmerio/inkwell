@@ -43,7 +43,9 @@ pub mod targets;
 pub mod types;
 pub mod values;
 
-use llvm_sys::{LLVMIntPredicate, LLVMRealPredicate, LLVMVisibility, LLVMThreadLocalMode, LLVMDLLStorageClass, LLVMAtomicOrdering};
+use llvm_sys::{LLVMIntPredicate, LLVMRealPredicate, LLVMVisibility, LLVMThreadLocalMode, LLVMDLLStorageClass, LLVMAtomicOrdering, LLVMAtomicRMWBinOp};
+
+use std::convert::TryFrom;
 
 // Thanks to kennytm for coming up with assert_unique_features!
 // which ensures that the LLVM feature flags are mutually exclusive
@@ -80,7 +82,6 @@ assert_unique_used_features!{"llvm3-6", "llvm3-7", "llvm3-8", "llvm3-9", "llvm4-
 ///
 /// # Remarks
 /// See also: https://llvm.org/doxygen/NVPTXBaseInfo_8h_source.html
-#[repr(u32)]
 #[derive(Debug, PartialEq, Eq, Copy, Clone)]
 pub enum AddressSpace {
     Generic = 0,
@@ -90,15 +91,17 @@ pub enum AddressSpace {
     Local   = 5,
 }
 
-impl From<u32> for AddressSpace {
-    fn from(val: u32) -> Self {
+impl TryFrom<u32> for AddressSpace {
+    type Error = ();
+
+    fn try_from(val: u32) -> Result<Self, Self::Error> {
         match val {
-            0 => AddressSpace::Generic,
-            1 => AddressSpace::Global,
-            2 => AddressSpace::Shared,
-            3 => AddressSpace::Const,
-            4 => AddressSpace::Local,
-            _ => unreachable!("Invalid value for AddressSpace"),
+            0 => Ok(AddressSpace::Generic),
+            1 => Ok(AddressSpace::Global),
+            2 => Ok(AddressSpace::Shared),
+            3 => Ok(AddressSpace::Const),
+            4 => Ok(AddressSpace::Local),
+            _ => Err(()),
         }
     }
 }
@@ -170,16 +173,71 @@ enum_rename!{
 }
 
 // REVIEW: Maybe this belongs in some sort of prelude?
-enum_rename!{
-    AtomicOrdering <=> LLVMAtomicOrdering {
-        NotAtomic <=> LLVMAtomicOrderingNotAtomic,
-        Unordered <=> LLVMAtomicOrderingUnordered,
-        Monotonic <=> LLVMAtomicOrderingMonotonic,
-        Acquire <=> LLVMAtomicOrderingAcquire,
-        Release <=> LLVMAtomicOrderingRelease,
-        AcquireRelease <=> LLVMAtomicOrderingAcquireRelease,
-        SequentiallyConsistent <=> LLVMAtomicOrderingSequentiallyConsistent,
-    }
+#[llvm_enum(LLVMAtomicOrdering)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
+pub enum AtomicOrdering {
+    #[llvm_variant(LLVMAtomicOrderingNotAtomic)]
+    NotAtomic,
+    #[llvm_variant(LLVMAtomicOrderingUnordered)]
+    Unordered,
+    #[llvm_variant(LLVMAtomicOrderingMonotonic)]
+    Monotonic,
+    #[llvm_variant(LLVMAtomicOrderingAcquire)]
+    Acquire,
+    #[llvm_variant(LLVMAtomicOrderingRelease)]
+    Release,
+    #[llvm_variant(LLVMAtomicOrderingAcquireRelease)]
+    AcquireRelease,
+    #[llvm_variant(LLVMAtomicOrderingSequentiallyConsistent)]
+    SequentiallyConsistent,
+}
+
+#[llvm_enum(LLVMAtomicRMWBinOp)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
+pub enum AtomicRMWBinOp {
+    /// Stores to memory and returns the prior value.
+    #[llvm_variant(LLVMAtomicRMWBinOpXchg)]
+    Xchg,
+
+    /// Adds to the value in memory and returns the prior value.
+    #[llvm_variant(LLVMAtomicRMWBinOpAdd)]
+    Add,
+
+    /// Subtract a value off the value in memory and returns the prior value.
+    #[llvm_variant(LLVMAtomicRMWBinOpSub)]
+    Sub,
+
+    /// Bitwise and into memory and returns the prior value.
+    #[llvm_variant(LLVMAtomicRMWBinOpAnd)]
+    And,
+
+    /// Bitwise nands into memory and returns the prior value.
+    #[llvm_variant(LLVMAtomicRMWBinOpNand)]
+    Nand,
+
+    /// Bitwise ors into memory and returns the prior value.
+    #[llvm_variant(LLVMAtomicRMWBinOpOr)]
+    Or,
+
+    /// Bitwise xors into memory and returns the prior value.
+    #[llvm_variant(LLVMAtomicRMWBinOpXor)]
+    Xor,
+
+    /// Sets memory to the signed-greater of the value provided and the value in memory. Returns the value that was in memory.
+    #[llvm_variant(LLVMAtomicRMWBinOpMax)]
+    Max,
+
+    /// Sets memory to the signed-lesser of the value provided and the value in memory. Returns the value that was in memory.
+    #[llvm_variant(LLVMAtomicRMWBinOpMin)]
+    Min,
+
+    /// Sets memory to the unsigned-greater of the value provided and the value in memory. Returns the value that was in memory.
+    #[llvm_variant(LLVMAtomicRMWBinOpUMax)]
+    UMax,
+
+    /// Sets memory to the unsigned-lesser of the value provided and the value in memory. Returns the value that was in memory.
+    #[llvm_variant(LLVMAtomicRMWBinOpUMin)]
+    UMin,
 }
 
 /// Defines the optimization level used to compile a `Module`.

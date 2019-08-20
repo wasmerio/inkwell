@@ -24,8 +24,7 @@ fn test_init_all_passes_for_module() {
     pass_manager.add_internalize_pass(true);
     pass_manager.add_strip_dead_prototypes_pass();
     pass_manager.add_strip_symbol_pass();
-    #[cfg(any(feature = "llvm3-6", feature = "llvm3-7", feature = "llvm3-8", feature = "llvm3-9", feature = "llvm4-0",
-              feature = "llvm5-0", feature = "llvm6-0"))]
+    #[cfg(any(feature = "llvm3-6", feature = "llvm3-7", feature = "llvm3-8", feature = "llvm3-9", feature = "llvm4-0"))]
     pass_manager.add_bb_vectorize_pass();
     pass_manager.add_loop_vectorize_pass();
     pass_manager.add_slp_vectorize_pass();
@@ -82,15 +81,16 @@ fn test_init_all_passes_for_module() {
         pass_manager.add_loop_unroll_and_jam_pass();
     }
 
-    assert!(!pass_manager.initialize());
-    assert!(!pass_manager.finalize());
+    #[cfg(not(any(feature = "llvm3-6", feature = "llvm3-7", feature = "llvm3-8", feature = "llvm3-9",
+                  feature = "llvm4-0", feature = "llvm5-0", feature = "llvm6-0", feature = "llvm7-0")))]
+    {
+        pass_manager.add_coroutine_early_pass();
+        pass_manager.add_coroutine_split_pass();
+        pass_manager.add_coroutine_elide_pass();
+        pass_manager.add_coroutine_cleanup_pass();
+    }
 
     pass_manager.run_on(&module);
-
-    assert!(!pass_manager.initialize());
-    assert!(!pass_manager.finalize());
-
-    // TODO: Test when initialize and finalize are true
 }
 
 #[test]
@@ -120,10 +120,17 @@ fn test_pass_manager_builder() {
     builder.position_at_end(&entry);
     builder.build_return(None);
 
+    #[cfg(not(feature = "llvm3-7"))]
+    assert!(!fn_pass_manager.initialize());
+    #[cfg(feature = "llvm3-7")]
+    fn_pass_manager.initialize();
+
     // TODO: Test with actual changes? Would be true in that case
     // REVIEW: Segfaults in 4.0
     #[cfg(not(feature = "llvm4-0"))]
     assert!(!fn_pass_manager.run_on(&fn_value));
+
+    assert!(!fn_pass_manager.finalize());
 
     let module_pass_manager = PassManager::create(());
 
