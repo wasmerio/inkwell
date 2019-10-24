@@ -12,7 +12,7 @@ use crate::basic_block::BasicBlock;
 use crate::values::{AggregateValue, AggregateValueEnum, AsValueRef, BasicValue, BasicValueEnum, PhiValue, FunctionValue, IntValue, PointerValue, VectorValue, InstructionValue, GlobalValue, IntMathValue, FloatMathValue, PointerMathValue, InstructionOpcode, CallSiteValue};
 #[llvm_versions(3.9..=latest)]
 use crate::values::StructValue;
-use crate::types::{AsTypeRef, BasicType, IntMathType, FloatMathType, PointerType, PointerMathType};
+use crate::types::{AsTypeRef, BasicType, FloatMathType, IntMathType, PointerType, PointerMathType};
 
 use std::ffi::CString;
 
@@ -1026,6 +1026,17 @@ impl Builder {
         };
 
         T::new(value)
+    }
+
+    // Note: see comment on build_int_compare regarding return value type
+    pub fn build_pointer_compare<T: PointerMathValue>(&self, op: IntPredicate, lhs: T, rhs: T, name: &str) -> <<T::BaseType as PointerMathType>::PtrConvType as IntMathType>::ValueType {
+        let c_string = CString::new(name).expect("Conversion to CString failed unexpectedly");
+
+        let value = unsafe {
+            LLVMBuildICmp(self.builder, op.into(), lhs.as_value_ref(), rhs.as_value_ref(), c_string.as_ptr())
+        };
+
+        <<T::BaseType as PointerMathType>::PtrConvType as IntMathType>::ValueType::new(value)
     }
 
     // SubType: <F>(&self, op, lhs: &FloatValue<F>, rhs: &FloatValue<F>, name) -> IntValue<bool> { ?
