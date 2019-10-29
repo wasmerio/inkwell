@@ -8,7 +8,7 @@ use llvm_sys::core::LLVMValueAsMetadata;
 
 use crate::support::LLVMString;
 use crate::values::traits::AsValueRef;
-use crate::values::{BasicValue, BasicMetadataValueEnum, Value};
+use crate::values::{BasicMetadataValueEnum, Value};
 
 use std::ffi::{CString, CStr};
 use std::fmt;
@@ -74,7 +74,7 @@ impl MetadataValue {
         }
     }
 
-    pub fn create_node(values: &[&dyn BasicValue]) -> Self {
+    pub fn create_node(values: &[BasicMetadataValueEnum]) -> Self {
         let mut tuple_values: Vec<LLVMValueRef> = values.iter()
                                                         .map(|val| val.as_value_ref())
                                                         .collect();
