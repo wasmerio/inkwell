@@ -9,7 +9,7 @@ use llvm_sys::prelude::LLVMValueRef;
 
 use crate::basic_block::BasicBlock;
 use crate::values::traits::AsValueRef;
-use crate::values::{BasicValue, BasicValueEnum, BasicValueUse, Value};
+use crate::values::{BasicValue, BasicValueEnum, BasicValueUse, MetadataValue, Value};
 use crate::{AtomicOrdering, IntPredicate, FloatPredicate};
 
 // REVIEW: Split up into structs for SubTypes on InstructionValues?
@@ -585,6 +585,18 @@ impl InstructionValue {
         } else {
             None
         }
+    }
+
+    pub fn has_metadata(&self) -> bool {
+        self.instruction_value.has_metadata()
+    }
+
+    pub fn get_metadata(&self, kind_id: u32) -> Option<MetadataValue> {
+        self.instruction_value.get_metadata(kind_id)
+    }
+
+    pub fn set_metadata(&self, metadata: MetadataValue, kind_id: u32) {
+        self.instruction_value.set_metadata(metadata, kind_id)
     }
 }
 
