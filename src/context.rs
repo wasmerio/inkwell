@@ -893,7 +893,7 @@ impl Drop for Context {
     }
 }
 
-/// A `ContextRef` is a smart pointer allowing borrowed access to a a type's `Context`.
+/// A `ContextRef` is a smart pointer allowing borrowed access to a type's `Context`.
 #[derive(Debug, PartialEq, Eq)]
 pub struct ContextRef<'ctx> {
     context: ManuallyDrop<Context>,
@@ -909,14 +909,21 @@ impl<'ctx> ContextRef<'ctx> {
     }
 
     /// Gets a usable context object with a correct lifetime.
+    ///
+    /// Safety:
+    ///   The reference returned is a reference to a member of the ContextRef,
+    ///   but with a static lifetime indicating a larger lifetime. This bypasses
+    ///   Rust's inherent use-after-free prevention. You must ensure that you
+    ///   don't hold on to the returned `&'ctx Context` for longer than the
+    ///   lifetime of the ContextRef.
     #[cfg(feature = "experimental")]
     pub fn get(&self) -> &'ctx Context {
         // Safety: Although strictly untrue that a local reference to the context field
-        // is guarenteed to live for the entirety of 'ctx:
+        // is guaranteed to live for the entirety of 'ctx:
         // 1) ContextRef cannot outlive 'ctx
-        // 2) Any method called called with this context object will inherit 'ctx,
-        // which is its proper lifetime and does not point into this context object
-        // specifically but towards the actual context pointer in LLVM.
+        // 2) Any method called with this context object will inherit 'ctx,
+        //    which is its proper lifetime and does not point into this context
+        //    object specifically but towards the actual context pointer in LLVM.
         unsafe {
             &*(&*self.context as *const Context)
         }

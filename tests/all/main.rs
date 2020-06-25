@@ -9,6 +9,8 @@ mod test_attributes;
 mod test_basic_block;
 mod test_builder;
 mod test_context;
+// TODO: llvm 7.0+
+mod test_debug;
 mod test_execution_engine;
 mod test_instruction_values;
 mod test_module;

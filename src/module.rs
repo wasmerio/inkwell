@@ -1360,7 +1360,7 @@ impl<'ctx> Module<'ctx> {
     /// Creates a `DebugInfoBuilder` for this `Module`.
     #[llvm_versions(6.0..=latest)]
     #[cfg(feature = "experimental")]
-    pub fn create_debug_info_builder(&self, allow_unresolved: bool) -> DebugInfoBuilder {
+    pub fn create_debug_info_builder(&self, allow_unresolved: bool) -> DebugInfoBuilder<'ctx> {
         use llvm_sys::debuginfo::{LLVMCreateDIBuilder, LLVMCreateDIBuilderDisallowUnresolved};
 
         let dib = unsafe {
@@ -1371,7 +1371,7 @@ impl<'ctx> Module<'ctx> {
             }
         };
 
-        DebugInfoBuilder::new(dib)
+        DebugInfoBuilder::new(dib, self.get_context())
     }
 }
 

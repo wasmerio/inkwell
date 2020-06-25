@@ -1,11 +1,12 @@
-use llvm_sys::core::{LLVMIsAMDNode, LLVMIsAMDString, LLVMGetMDString, LLVMGetMDNodeNumOperands, LLVMGetMDNodeOperands};
+use llvm_sys::core::{LLVMIsAMDNode, LLVMIsAMDString, LLVMGetMDString, LLVMGetMDNodeNumOperands, LLVMGetMDNodeOperands, LLVMGetValueKind};
 use llvm_sys::prelude::LLVMValueRef;
 
 #[llvm_versions(7.0..=latest)]
 use llvm_sys::prelude::LLVMMetadataRef;
 #[llvm_versions(7.0..=latest)]
-use llvm_sys::core::LLVMValueAsMetadata;
+use llvm_sys::core::{LLVMMetadataAsValue, LLVMValueAsMetadata};
 
+use crate::context::Context;
 use crate::support::LLVMString;
 use crate::values::traits::AsValueRef;
 use crate::values::{BasicMetadataValueEnum, Value};
@@ -54,6 +55,27 @@ impl<'ctx> MetadataValue<'ctx> {
 
         MetadataValue {
             metadata_value: Value::new(value),
+        }
+    }
+
+    pub(crate) fn new_with_metadata(context: &'ctx Context, value: LLVMMetadataRef) -> Self {
+        assert!(!value.is_null());
+
+        let value = unsafe { LLVMMetadataAsValue(context.context, value) };
+
+        unsafe {
+            assert!(!LLVMIsAMDNode(value).is_null() || !LLVMIsAMDString(value).is_null());
+        }
+
+        MetadataValue {
+            metadata_value: Value::new(value),
+        }
+    }
+
+    #[llvm_versions(3.6..=6.0)]
+    pub(crate) fn as_metadata_ref(self) -> LLVMMetadataRef {
+        unsafe {
+            self.as_value_ref() as LLVMMetadataRef
         }
     }
 
