@@ -35,5 +35,18 @@ fn test_debug_line_tables() {
         DIFlags::Public,
         false,
     );
+    let debug_loc = dibuilder.create_debug_location(3, 1, func, None);
+
+    let builder = context.create_builder();
+    let fn_type = context.void_type().fn_type(&[], false);
+    let function = module.add_function("_Z8functioni", fn_type, None);
+    let basic_block = context.append_basic_block(function, "entry");
+
+    function.set_subprogram(func);
+
+    builder.position_at_end(basic_block);
+    builder.set_debug_location(debug_loc);
+    builder.build_return(None);
+
     dibuilder.finish();
 }

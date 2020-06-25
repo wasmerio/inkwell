@@ -4,6 +4,10 @@ use either::{Either, Left, Right};
 use llvm_sys::core::{LLVMBuildAdd, LLVMBuildAlloca, LLVMBuildAnd, LLVMBuildArrayAlloca, LLVMBuildArrayMalloc, LLVMBuildAtomicRMW, LLVMBuildBr, LLVMBuildCall, LLVMBuildCast, LLVMBuildCondBr, LLVMBuildExtractValue, LLVMBuildFAdd, LLVMBuildFCmp, LLVMBuildFDiv, LLVMBuildFence, LLVMBuildFMul, LLVMBuildFNeg, LLVMBuildFree, LLVMBuildFSub, LLVMBuildGEP, LLVMBuildICmp, LLVMBuildInsertValue, LLVMBuildIsNotNull, LLVMBuildIsNull, LLVMBuildLoad, LLVMBuildMalloc, LLVMBuildMul, LLVMBuildNeg, LLVMBuildNot, LLVMBuildOr, LLVMBuildPhi, LLVMBuildPointerCast, LLVMBuildRet, LLVMBuildRetVoid, LLVMBuildStore, LLVMBuildSub, LLVMBuildUDiv, LLVMBuildUnreachable, LLVMBuildXor, LLVMDisposeBuilder, LLVMGetElementType, LLVMGetInsertBlock, LLVMGetReturnType, LLVMGetTypeKind, LLVMInsertIntoBuilder, LLVMPositionBuilderAtEnd, LLVMTypeOf, LLVMBuildExtractElement, LLVMBuildInsertElement, LLVMBuildIntToPtr, LLVMBuildPtrToInt, LLVMInsertIntoBuilderWithName, LLVMClearInsertionPosition, LLVMPositionBuilder, LLVMPositionBuilderBefore, LLVMBuildAggregateRet, LLVMBuildStructGEP, LLVMBuildInBoundsGEP, LLVMBuildPtrDiff, LLVMBuildNSWAdd, LLVMBuildNUWAdd, LLVMBuildNSWSub, LLVMBuildNUWSub, LLVMBuildNSWMul, LLVMBuildNUWMul, LLVMBuildSDiv, LLVMBuildSRem, LLVMBuildURem, LLVMBuildFRem, LLVMBuildNSWNeg, LLVMBuildNUWNeg, LLVMBuildFPToUI, LLVMBuildFPToSI, LLVMBuildSIToFP, LLVMBuildUIToFP, LLVMBuildFPTrunc, LLVMBuildFPExt, LLVMBuildIntCast, LLVMBuildFPCast, LLVMBuildSExtOrBitCast, LLVMBuildZExtOrBitCast, LLVMBuildTruncOrBitCast, LLVMBuildSwitch, LLVMAddCase, LLVMBuildShl, LLVMBuildAShr, LLVMBuildLShr, LLVMBuildGlobalString, LLVMBuildGlobalStringPtr, LLVMBuildExactSDiv, LLVMBuildTrunc, LLVMBuildSExt, LLVMBuildZExt, LLVMBuildSelect, LLVMBuildAddrSpaceCast, LLVMBuildBitCast, LLVMBuildShuffleVector, LLVMBuildVAArg, LLVMBuildIndirectBr, LLVMAddDestination};
 #[llvm_versions(3.9..=latest)]
 use llvm_sys::core::LLVMBuildAtomicCmpXchg;
+#[llvm_versions(6.0..=8.0)]
+use llvm_sys::core::LLVMSetCurrentDebugLocation;
+#[llvm_versions(9.0..=latest)]
+use llvm_sys::core::LLVMSetCurrentDebugLocation2;
 #[llvm_versions(8.0..=latest)]
 use llvm_sys::core::{LLVMBuildMemCpy, LLVMBuildMemMove};
 use llvm_sys::prelude::{LLVMBuilderRef, LLVMValueRef};
@@ -15,6 +19,8 @@ use crate::support::to_c_str;
 use crate::values::{AggregateValue, AggregateValueEnum, AsValueRef, BasicValue, BasicValueEnum, PhiValue, FunctionValue, IntValue, PointerValue, VectorValue, InstructionValue, GlobalValue, IntMathValue, FloatMathValue, PointerMathValue, InstructionOpcode, CallSiteValue};
 #[llvm_versions(3.9..=latest)]
 use crate::values::StructValue;
+#[llvm_versions(6.0..=latest)]
+use crate::values::MetadataValue;
 use crate::types::{AsTypeRef, BasicType, IntMathType, FloatMathType, PointerType, PointerMathType};
 
 use std::marker::PhantomData;
@@ -1311,6 +1317,22 @@ impl<'ctx> Builder<'ctx> {
     pub fn position_at_end(&self, basic_block: BasicBlock<'ctx>) {
         unsafe {
             LLVMPositionBuilderAtEnd(self.builder, basic_block.basic_block);
+        }
+    }
+
+    #[llvm_versions(6.0..=8.0)]
+    #[cfg(feature = "experimental")]
+    pub fn set_debug_location(&self, debug_loc: MetadataValue<'ctx>) {
+        unsafe {
+            LLVMSetCurrentDebugLocation(self.builder, debug_loc.as_value_ref());
+        }
+    }
+
+    #[llvm_versions(9.0..=latest)]
+    #[cfg(feature = "experimental")]
+    pub fn set_debug_location(&self, debug_loc: MetadataValue<'ctx>) {
+        unsafe {
+            LLVMSetCurrentDebugLocation2(self.builder, debug_loc.as_metadata_ref());
         }
     }
 
