@@ -290,11 +290,14 @@ impl<'ctx> FunctionValue<'ctx> {
 
     #[llvm_versions(7.0..=latest)]
     #[cfg(feature = "experimental")]
-    pub fn get_subprogram(self) -> MetadataValue<'ctx> {
+    pub fn get_subprogram(self) -> Option<MetadataValue<'ctx>> {
         let context_ref = self.get_type().get_context();
-        MetadataValue::new_with_metadata(context_ref.get(), unsafe {
-            LLVMGetSubprogram(self.as_value_ref())
-        })
+        let subprogram = unsafe { LLVMGetSubprogram(self.as_value_ref()) };
+        if subprogram.is_null() {
+            None
+        } else {
+            Some(MetadataValue::new_with_metadata(context_ref.get(), subprogram))
+        }
     }
 
     #[llvm_versions(7.0..=latest)]

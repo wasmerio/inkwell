@@ -42,11 +42,15 @@ fn test_debug_line_tables() {
     let function = module.add_function("_Z8functioni", fn_type, None);
     let basic_block = context.append_basic_block(function, "entry");
 
+    assert_eq!(function.get_subprogram(), None);
     function.set_subprogram(func);
+    assert_eq!(function.get_subprogram(), Some(func));
 
     builder.position_at_end(basic_block);
     builder.set_debug_location(debug_loc);
     builder.build_return(None);
 
     dibuilder.finish();
+
+    module.print_to_stderr();
 }
