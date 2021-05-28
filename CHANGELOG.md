@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### TODO
 - TODO
 
+## [0.2.0-alpha.2] - 2021-05-28
+
+### Added
+
+- [#247](https://github.com/TheDan64/inkwell/pull/247) Add From<Basic*Enum> for Basic*TypeEnum impls
+
 ## [0.2.0-alpha.1] - 2021-05-28
 
 ### Added
