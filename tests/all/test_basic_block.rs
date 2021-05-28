@@ -1,7 +1,7 @@
-extern crate inkwell;
+extern crate wasmer_inkwell;
 
-use self::inkwell::context::Context;
-use self::inkwell::values::InstructionOpcode;
+use self::wasmer_inkwell::context::Context;
+use self::wasmer_inkwell::values::InstructionOpcode;
 
 #[test]
 fn test_basic_block_ordering() {

@@ -1,6 +1,6 @@
-use inkwell::{AddressSpace, AtomicOrdering, AtomicRMWBinOp, OptimizationLevel};
-use inkwell::context::Context;
-use inkwell::values::BasicValue;
+use wasmer_inkwell::{AddressSpace, AtomicOrdering, AtomicRMWBinOp, OptimizationLevel};
+use wasmer_inkwell::context::Context;
+use wasmer_inkwell::values::BasicValue;
 
 use std::ptr::null;
 
@@ -564,7 +564,7 @@ fn test_vector_binary_ops() {
     let p1_vec = fn_value.get_first_param().unwrap().into_vector_value();
     let p2_vec = fn_value.get_nth_param(1).unwrap().into_vector_value();
     let p3_vec = fn_value.get_nth_param(2).unwrap().into_vector_value();
-    let compared_vec = builder.build_float_compare(inkwell::FloatPredicate::OLT, p1_vec, p2_vec, "compared_vec");
+    let compared_vec = builder.build_float_compare(wasmer_inkwell::FloatPredicate::OLT, p1_vec, p2_vec, "compared_vec");
     let multiplied_vec = builder.build_int_mul(compared_vec, p3_vec, "multiplied_vec");
     builder.build_return(Some(&multiplied_vec));
     assert!(fn_value.verify(true));
@@ -683,7 +683,7 @@ fn test_alignment_bytes() {
 }
 
 #[llvm_versions(8.0..=latest)]
-fn run_memcpy_on<'ctx>(context: &'ctx Context, module: &inkwell::module::Module<'ctx>, alignment: u32) -> Result<(), &'static str> {
+fn run_memcpy_on<'ctx>(context: &'ctx Context, module: &wasmer_inkwell::module::Module<'ctx>, alignment: u32) -> Result<(), &'static str> {
     let i32_type = context.i32_type();
     let i64_type = context.i64_type();
     let array_len = 4;
@@ -747,7 +747,7 @@ fn test_memcpy() {
 }
 
 #[llvm_versions(8.0..=latest)]
-fn run_memmove_on<'ctx>(context: &'ctx Context, module: &inkwell::module::Module<'ctx>, alignment: u32) -> Result<(), &'static str> {
+fn run_memmove_on<'ctx>(context: &'ctx Context, module: &wasmer_inkwell::module::Module<'ctx>, alignment: u32) -> Result<(), &'static str> {
     let i32_type = context.i32_type();
     let i64_type = context.i64_type();
     let array_len = 4;

@@ -74,7 +74,7 @@ impl<'ctx> IntType<'ctx> {
     ///
     /// # Example
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// // Local Context
     /// let context = Context::create();
@@ -96,9 +96,9 @@ impl<'ctx> IntType<'ctx> {
     /// ```no_run
     /// use std::convert::TryFrom;
     ///
-    /// use inkwell::context::Context;
-    /// use inkwell::types::StringRadix;
-    /// use inkwell::values::AnyValue;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::types::StringRadix;
+    /// use wasmer_inkwell::values::AnyValue;
     ///
     /// let context = Context::create();
     /// let i8_type = context.i8_type();
@@ -136,7 +136,7 @@ impl<'ctx> IntType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let i64_type = context.i64_type();
@@ -152,7 +152,7 @@ impl<'ctx> IntType<'ctx> {
     ///
     /// # Example
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// // Local Context
     /// let context = Context::create();
@@ -170,8 +170,8 @@ impl<'ctx> IntType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::values::AnyValue;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::values::AnyValue;
     ///
     /// let context = Context::create();
     /// let i8_type = context.i8_type();
@@ -190,7 +190,7 @@ impl<'ctx> IntType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let i8_type = context.i8_type();
@@ -205,7 +205,7 @@ impl<'ctx> IntType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let i8_type = context.i8_type();
@@ -223,7 +223,7 @@ impl<'ctx> IntType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let i8_type = context.i8_type();
@@ -241,7 +241,7 @@ impl<'ctx> IntType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let i8_type = context.i8_type();
@@ -257,7 +257,7 @@ impl<'ctx> IntType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let i8_type = context.i8_type();
@@ -272,7 +272,7 @@ impl<'ctx> IntType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let i8_type = context.i8_type();
@@ -287,8 +287,8 @@ impl<'ctx> IntType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::AddressSpace;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::AddressSpace;
     ///
     /// let context = Context::create();
     /// let i8_type = context.i8_type();
@@ -304,7 +304,7 @@ impl<'ctx> IntType<'ctx> {
     ///
     /// # Example
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let bool_type = context.bool_type();
@@ -328,8 +328,8 @@ impl<'ctx> IntType<'ctx> {
     ///
     /// # Example
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::AddressSpace;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::AddressSpace;
     ///
     /// let context = Context::create();
     /// let i8_type = context.i8_type();
@@ -354,7 +354,7 @@ impl<'ctx> IntType<'ctx> {
     ///
     /// # Example
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let i8_type = context.i8_type();

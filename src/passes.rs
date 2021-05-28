@@ -83,9 +83,9 @@ impl PassManagerBuilder {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::OptimizationLevel::Aggressive;
-    /// use inkwell::passes::{PassManager, PassManagerBuilder};
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::OptimizationLevel::Aggressive;
+    /// use wasmer_inkwell::passes::{PassManager, PassManagerBuilder};
     ///
     /// let context = Context::create();
     /// let module = context.create_module("mod");
@@ -109,9 +109,9 @@ impl PassManagerBuilder {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::OptimizationLevel::Aggressive;
-    /// use inkwell::passes::{PassManager, PassManagerBuilder};
-    /// use inkwell::targets::{InitializationConfig, Target};
+    /// use wasmer_inkwell::OptimizationLevel::Aggressive;
+    /// use wasmer_inkwell::passes::{PassManager, PassManagerBuilder};
+    /// use wasmer_inkwell::targets::{InitializationConfig, Target};
     ///
     /// let config = InitializationConfig::default();
     /// Target::initialize_native(&config).unwrap();
@@ -135,9 +135,9 @@ impl PassManagerBuilder {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::OptimizationLevel::Aggressive;
-    /// use inkwell::passes::{PassManager, PassManagerBuilder};
-    /// use inkwell::targets::{InitializationConfig, Target};
+    /// use wasmer_inkwell::OptimizationLevel::Aggressive;
+    /// use wasmer_inkwell::passes::{PassManager, PassManagerBuilder};
+    /// use wasmer_inkwell::targets::{InitializationConfig, Target};
     ///
     /// let config = InitializationConfig::default();
     /// Target::initialize_native(&config).unwrap();

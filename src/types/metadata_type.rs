@@ -26,7 +26,7 @@ impl<'ctx> MetadataType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let md_type = context.metadata_type();
@@ -41,7 +41,7 @@ impl<'ctx> MetadataType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let md_type = context.metadata_type();

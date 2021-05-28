@@ -27,7 +27,7 @@ impl<'ctx> CallSiteValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let builder = context.create_builder();
@@ -54,7 +54,7 @@ impl<'ctx> CallSiteValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let builder = context.create_builder();
@@ -83,7 +83,7 @@ impl<'ctx> CallSiteValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let builder = context.create_builder();
@@ -113,8 +113,8 @@ impl<'ctx> CallSiteValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::attributes::AttributeLoc;
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::attributes::AttributeLoc;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let builder = context.create_builder();
@@ -147,7 +147,7 @@ impl<'ctx> CallSiteValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let builder = context.create_builder();
@@ -179,8 +179,8 @@ impl<'ctx> CallSiteValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::attributes::AttributeLoc;
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::attributes::AttributeLoc;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let builder = context.create_builder();
@@ -215,8 +215,8 @@ impl<'ctx> CallSiteValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::attributes::AttributeLoc;
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::attributes::AttributeLoc;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let builder = context.create_builder();
@@ -260,8 +260,8 @@ impl<'ctx> CallSiteValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::attributes::AttributeLoc;
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::attributes::AttributeLoc;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let builder = context.create_builder();
@@ -305,8 +305,8 @@ impl<'ctx> CallSiteValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::attributes::AttributeLoc;
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::attributes::AttributeLoc;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let builder = context.create_builder();
@@ -342,8 +342,8 @@ impl<'ctx> CallSiteValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::attributes::AttributeLoc;
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::attributes::AttributeLoc;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let builder = context.create_builder();
@@ -379,8 +379,8 @@ impl<'ctx> CallSiteValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::attributes::AttributeLoc;
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::attributes::AttributeLoc;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let builder = context.create_builder();
@@ -412,7 +412,7 @@ impl<'ctx> CallSiteValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let builder = context.create_builder();
@@ -439,7 +439,7 @@ impl<'ctx> CallSiteValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let builder = context.create_builder();
@@ -472,8 +472,8 @@ impl<'ctx> CallSiteValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::attributes::AttributeLoc;
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::attributes::AttributeLoc;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let builder = context.create_builder();

@@ -33,7 +33,7 @@ impl<'ctx> StructType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -66,7 +66,7 @@ impl<'ctx> StructType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -88,7 +88,7 @@ impl<'ctx> StructType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -107,7 +107,7 @@ impl<'ctx> StructType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -123,7 +123,7 @@ impl<'ctx> StructType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -139,7 +139,7 @@ impl<'ctx> StructType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -156,7 +156,7 @@ impl<'ctx> StructType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -185,8 +185,8 @@ impl<'ctx> StructType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::AddressSpace;
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::AddressSpace;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -204,7 +204,7 @@ impl<'ctx> StructType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -220,7 +220,7 @@ impl<'ctx> StructType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -239,7 +239,7 @@ impl<'ctx> StructType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -258,7 +258,7 @@ impl<'ctx> StructType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -277,7 +277,7 @@ impl<'ctx> StructType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -297,7 +297,7 @@ impl<'ctx> StructType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -334,7 +334,7 @@ impl<'ctx> StructType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -359,7 +359,7 @@ impl<'ctx> StructType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -388,7 +388,7 @@ impl<'ctx> StructType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();

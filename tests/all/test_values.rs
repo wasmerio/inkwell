@@ -1,11 +1,11 @@
-use inkwell::{DLLStorageClass, FloatPredicate, GlobalVisibility, ThreadLocalMode, AddressSpace};
-use inkwell::attributes::AttributeLoc;
-use inkwell::context::Context;
-use inkwell::module::Linkage::*;
-use inkwell::types::{AnyType, StringRadix, VectorType};
-use inkwell::values::{AnyValue, BasicValue, InstructionOpcode::*, FIRST_CUSTOM_METADATA_KIND_ID};
+use wasmer_inkwell::{DLLStorageClass, FloatPredicate, GlobalVisibility, ThreadLocalMode, AddressSpace};
+use wasmer_inkwell::attributes::AttributeLoc;
+use wasmer_inkwell::context::Context;
+use wasmer_inkwell::module::Linkage::*;
+use wasmer_inkwell::types::{AnyType, StringRadix, VectorType};
+use wasmer_inkwell::values::{AnyValue, BasicValue, InstructionOpcode::*, FIRST_CUSTOM_METADATA_KIND_ID};
 #[llvm_versions(7.0..=latest)]
-use inkwell::comdat::ComdatSelectionKind;
+use wasmer_inkwell::comdat::ComdatSelectionKind;
 
 use std::convert::TryFrom;
 
@@ -707,7 +707,7 @@ fn test_global_byte_array() {
 #[test]
 fn test_globals() {
     #[llvm_versions(7.0..=latest)]
-    use inkwell::values::UnnamedAddress;
+    use wasmer_inkwell::values::UnnamedAddress;
 
     let context = Context::create();
     let module = context.create_module("my_mod");

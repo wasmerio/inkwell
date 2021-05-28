@@ -23,9 +23,9 @@ impl<'ctx> BasicValueUse<'ctx> {
     /// The following example,
     ///
     /// ```no_run
-    /// use inkwell::AddressSpace;
-    /// use inkwell::context::Context;
-    /// use inkwell::values::BasicValue;
+    /// use wasmer_inkwell::AddressSpace;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::values::BasicValue;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("ivs");
@@ -88,9 +88,9 @@ impl<'ctx> BasicValueUse<'ctx> {
     /// Gets the user (an `AnyValueEnum`) of this use.
     ///
     /// ```no_run
-    /// use inkwell::AddressSpace;
-    /// use inkwell::context::Context;
-    /// use inkwell::values::BasicValue;
+    /// use wasmer_inkwell::AddressSpace;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::values::BasicValue;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("ivs");
@@ -126,9 +126,9 @@ impl<'ctx> BasicValueUse<'ctx> {
     /// Gets the used value (a `BasicValueEnum` or `BasicBlock`) of this use.
     ///
     /// ```no_run
-    /// use inkwell::AddressSpace;
-    /// use inkwell::context::Context;
-    /// use inkwell::values::BasicValue;
+    /// use wasmer_inkwell::AddressSpace;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::values::BasicValue;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("ivs");

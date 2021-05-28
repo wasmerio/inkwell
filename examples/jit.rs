@@ -1,10 +1,10 @@
-extern crate inkwell;
+extern crate wasmer_inkwell;
 
-use inkwell::OptimizationLevel;
-use inkwell::builder::Builder;
-use inkwell::context::Context;
-use inkwell::execution_engine::{ExecutionEngine, JitFunction};
-use inkwell::module::Module;
+use wasmer_inkwell::OptimizationLevel;
+use wasmer_inkwell::builder::Builder;
+use wasmer_inkwell::context::Context;
+use wasmer_inkwell::execution_engine::{ExecutionEngine, JitFunction};
+use wasmer_inkwell::module::Module;
 
 use std::error::Error;
 

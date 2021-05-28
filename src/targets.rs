@@ -1071,7 +1071,7 @@ impl TargetMachine {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::targets::TargetMachine;
+    /// use wasmer_inkwell::targets::TargetMachine;
     ///
     /// let default_triple = TargetMachine::get_default_triple();
     ///
@@ -1152,9 +1152,9 @@ impl TargetMachine {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::OptimizationLevel;
-    /// use inkwell::context::Context;
-    /// use inkwell::targets::{CodeModel, RelocMode, FileType, Target, TargetMachine, TargetTriple, InitializationConfig};
+    /// use wasmer_inkwell::OptimizationLevel;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::targets::{CodeModel, RelocMode, FileType, Target, TargetMachine, TargetTriple, InitializationConfig};
     ///
     /// Target::initialize_x86(&InitializationConfig::default());
     ///
@@ -1215,9 +1215,9 @@ impl TargetMachine {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::OptimizationLevel;
-    /// use inkwell::context::Context;
-    /// use inkwell::targets::{CodeModel, RelocMode, FileType, Target, TargetMachine, TargetTriple, InitializationConfig};
+    /// use wasmer_inkwell::OptimizationLevel;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::targets::{CodeModel, RelocMode, FileType, Target, TargetMachine, TargetTriple, InitializationConfig};
     ///
     /// use std::path::Path;
     ///
@@ -1314,9 +1314,9 @@ impl TargetData {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::OptimizationLevel;
-    /// use inkwell::context::Context;
-    /// use inkwell::targets::{InitializationConfig, Target};
+    /// use wasmer_inkwell::OptimizationLevel;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::targets::{InitializationConfig, Target};
     ///
     /// Target::initialize_native(&InitializationConfig::default()).expect("Failed to initialize native target");
     ///

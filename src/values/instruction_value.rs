@@ -325,8 +325,8 @@ impl<'ctx> InstructionValue<'ctx> {
     /// The following example,
     ///
     /// ```no_run
-    /// use inkwell::AddressSpace;
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::AddressSpace;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("ivs");
@@ -387,8 +387,8 @@ impl<'ctx> InstructionValue<'ctx> {
     /// The following example,
     ///
     /// ```no_run
-    /// use inkwell::AddressSpace;
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::AddressSpace;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("ivs");
@@ -476,8 +476,8 @@ impl<'ctx> InstructionValue<'ctx> {
     /// An operand is a `BasicValue` used in an IR instruction.
     ///
     /// ```no_run
-    /// use inkwell::AddressSpace;
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::AddressSpace;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("ivs");
@@ -520,9 +520,9 @@ impl<'ctx> InstructionValue<'ctx> {
     /// Gets the use of an operand(`BasicValue`), if any.
     ///
     /// ```no_run
-    /// use inkwell::AddressSpace;
-    /// use inkwell::context::Context;
-    /// use inkwell::values::BasicValue;
+    /// use wasmer_inkwell::AddressSpace;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::values::BasicValue;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("ivs");
@@ -570,9 +570,9 @@ impl<'ctx> InstructionValue<'ctx> {
     /// The following example,
     ///
     /// ```no_run
-    /// use inkwell::AddressSpace;
-    /// use inkwell::context::Context;
-    /// use inkwell::values::BasicValue;
+    /// use wasmer_inkwell::AddressSpace;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::values::BasicValue;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("ivs");

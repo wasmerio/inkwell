@@ -300,7 +300,7 @@ impl<'ctx> IntValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let i64_type = context.i64_type();
@@ -319,7 +319,7 @@ impl<'ctx> IntValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let i64_type = context.i64_type();
@@ -336,7 +336,7 @@ impl<'ctx> IntValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let i8_type = context.i8_type();
@@ -363,7 +363,7 @@ impl<'ctx> IntValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let i8_type = context.i8_type();

@@ -30,7 +30,7 @@ impl<'ctx> VectorType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -46,7 +46,7 @@ impl<'ctx> VectorType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -62,7 +62,7 @@ impl<'ctx> VectorType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -89,8 +89,8 @@ impl<'ctx> VectorType<'ctx> {
     ///
     /// # Example
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::types::VectorType;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::types::VectorType;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -114,7 +114,7 @@ impl<'ctx> VectorType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -138,8 +138,8 @@ impl<'ctx> VectorType<'ctx> {
     ///
     /// # Example
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::AddressSpace;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::AddressSpace;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -160,7 +160,7 @@ impl<'ctx> VectorType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -179,8 +179,8 @@ impl<'ctx> VectorType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::AddressSpace;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::AddressSpace;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -198,7 +198,7 @@ impl<'ctx> VectorType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -214,7 +214,7 @@ impl<'ctx> VectorType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -232,8 +232,8 @@ impl<'ctx> VectorType<'ctx> {
     ///
     /// # Example
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::types::VectorType;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::types::VectorType;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -260,7 +260,7 @@ impl<'ctx> VectorType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();

@@ -28,7 +28,7 @@ impl<'ctx> VoidType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let void_type = context.void_type();
@@ -44,7 +44,7 @@ impl<'ctx> VoidType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let void_type = context.void_type();
@@ -61,7 +61,7 @@ impl<'ctx> VoidType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let void_type = context.void_type();

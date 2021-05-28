@@ -80,7 +80,7 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// ```
@@ -99,7 +99,7 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = unsafe {
     ///     Context::get_global(|_global_context| {
@@ -119,7 +119,7 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let builder = context.create_builder();
@@ -135,7 +135,7 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_module");
@@ -153,7 +153,7 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_module");
@@ -199,7 +199,7 @@ impl Context {
     ///
     /// # Example
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_module");
@@ -238,7 +238,7 @@ impl Context {
     ///
     /// # Example
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_module");
@@ -276,7 +276,7 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let void_type = context.void_type();
@@ -294,7 +294,7 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let bool_type = context.bool_type();
@@ -313,7 +313,7 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let i8_type = context.i8_type();
@@ -332,7 +332,7 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let i16_type = context.i16_type();
@@ -351,7 +351,7 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let i32_type = context.i32_type();
@@ -370,7 +370,7 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let i64_type = context.i64_type();
@@ -389,7 +389,7 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let i128_type = context.i128_type();
@@ -409,7 +409,7 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let i42_type = context.custom_width_int_type(42);
@@ -428,8 +428,8 @@ impl Context {
     /// # Example
     ///
     /// ```
-    /// use inkwell::context::Context;
-    /// use inkwell::values::IntValue;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::values::IntValue;
     ///
     /// let context = Context::create();
     /// let md_type = context.metadata_type();
@@ -448,9 +448,9 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::OptimizationLevel;
-    /// use inkwell::context::Context;
-    /// use inkwell::targets::{InitializationConfig, Target};
+    /// use wasmer_inkwell::OptimizationLevel;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::targets::{InitializationConfig, Target};
     ///
     /// Target::initialize_native(&InitializationConfig::default()).expect("Failed to initialize native target");
     ///
@@ -486,7 +486,7 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     ///
@@ -505,7 +505,7 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     ///
@@ -524,7 +524,7 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     ///
@@ -543,7 +543,7 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     ///
@@ -562,7 +562,7 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     ///
@@ -584,7 +584,7 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     ///
@@ -604,7 +604,7 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -628,7 +628,7 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -650,7 +650,7 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -675,7 +675,7 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_mod");
@@ -706,7 +706,7 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_mod");
@@ -742,7 +742,7 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_mod");
@@ -773,7 +773,7 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let i8_type = context.i8_type();
@@ -814,7 +814,7 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let md_string = context.metadata_string("Floats are awesome!");
@@ -850,8 +850,8 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::values::FIRST_CUSTOM_METADATA_KIND_ID;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::values::FIRST_CUSTOM_METADATA_KIND_ID;
     ///
     /// let context = Context::create();
     ///
@@ -884,7 +884,7 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let enum_attribute = context.create_enum_attribute(0, 10);
@@ -903,7 +903,7 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let string_attribute = context.create_string_attribute("my_key_123", "my_val");
@@ -928,8 +928,8 @@ impl Context {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::values::AnyValue;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::values::AnyValue;
     ///
     /// let context = Context::create();
     /// let string = context.const_string(b"my_string", false);

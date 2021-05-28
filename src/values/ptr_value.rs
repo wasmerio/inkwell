@@ -45,8 +45,8 @@ impl<'ctx> PointerValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::AddressSpace;
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::AddressSpace;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let void_type = context.void_type();

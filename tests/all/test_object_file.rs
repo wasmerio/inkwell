@@ -1,13 +1,13 @@
-extern crate inkwell;
+extern crate wasmer_inkwell;
 
-use self::inkwell::context::Context;
-use self::inkwell::module::Module;
-use self::inkwell::targets::{
+use self::wasmer_inkwell::context::Context;
+use self::wasmer_inkwell::module::Module;
+use self::wasmer_inkwell::targets::{
     CodeModel, FileType, InitializationConfig, RelocMode, Target, TargetMachine,
 };
-use self::inkwell::types::IntType;
-use self::inkwell::values::BasicValue;
-use self::inkwell::OptimizationLevel;
+use self::wasmer_inkwell::types::IntType;
+use self::wasmer_inkwell::values::BasicValue;
+use self::wasmer_inkwell::OptimizationLevel;
 
 #[llvm_versions(7.0..=latest)]
 fn get_host_cpu_name() -> String {

@@ -34,7 +34,7 @@ impl Attribute {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let enum_attribute = context.create_enum_attribute(0, 10);
@@ -54,7 +54,7 @@ impl Attribute {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let string_attribute = context.create_string_attribute("my_key_123", "my_val");
@@ -72,7 +72,7 @@ impl Attribute {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::attributes::Attribute;
+    /// use wasmer_inkwell::attributes::Attribute;
     ///
     /// // This kind id doesn't exist:
     /// assert_eq!(Attribute::get_named_enum_kind_id("foobar"), 0);
@@ -92,7 +92,7 @@ impl Attribute {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let enum_attribute = context.create_enum_attribute(0, 10);
@@ -112,7 +112,7 @@ impl Attribute {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::attributes::Attribute;
+    /// use wasmer_inkwell::attributes::Attribute;
     ///
     /// assert_eq!(Attribute::get_last_enum_kind_id(), 56);
     /// ```
@@ -127,7 +127,7 @@ impl Attribute {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let enum_attribute = context.create_enum_attribute(0, 10);
@@ -147,7 +147,7 @@ impl Attribute {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let string_attribute = context.create_string_attribute("my_key", "my_val");
@@ -172,7 +172,7 @@ impl Attribute {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let string_attribute = context.create_string_attribute("my_key", "my_val");

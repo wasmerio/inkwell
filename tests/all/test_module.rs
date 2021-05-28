@@ -1,11 +1,11 @@
-extern crate inkwell;
+extern crate wasmer_inkwell;
 
-use self::inkwell::OptimizationLevel;
-use self::inkwell::context::Context;
-use self::inkwell::memory_buffer::MemoryBuffer;
-use self::inkwell::module::Module;
-use self::inkwell::targets::{Target, TargetTriple};
-use self::inkwell::values::AnyValue;
+use self::wasmer_inkwell::OptimizationLevel;
+use self::wasmer_inkwell::context::Context;
+use self::wasmer_inkwell::memory_buffer::MemoryBuffer;
+use self::wasmer_inkwell::module::Module;
+use self::wasmer_inkwell::targets::{Target, TargetTriple};
+use self::wasmer_inkwell::values::AnyValue;
 
 use std::env::temp_dir;
 use std::fs::{File, remove_file};
@@ -423,7 +423,7 @@ fn test_metadata_flags() {
         let context = Context::create();
         let module = context.create_module("my_module");
 
-        use self::inkwell::module::FlagBehavior;
+        use self::wasmer_inkwell::module::FlagBehavior;
 
         assert!(module.get_flag("some_key").is_none());
 

@@ -1,7 +1,7 @@
-extern crate inkwell;
+extern crate wasmer_inkwell;
 
-use self::inkwell::attributes::{Attribute, AttributeLoc};
-use self::inkwell::context::Context;
+use self::wasmer_inkwell::attributes::{Attribute, AttributeLoc};
+use self::wasmer_inkwell::context::Context;
 
 #[test]
 fn test_enum_attribute_kinds() {

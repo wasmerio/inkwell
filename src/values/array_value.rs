@@ -67,7 +67,7 @@ impl<'ctx> ArrayValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let i64_type = context.i64_type();

@@ -41,9 +41,9 @@ impl<'ctx> BasicBlock<'ctx> {
     ///
     /// # Example
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::module::Module;
-    /// use inkwell::builder::Builder;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::module::Module;
+    /// use wasmer_inkwell::builder::Builder;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_module");
@@ -69,9 +69,9 @@ impl<'ctx> BasicBlock<'ctx> {
     ///
     /// # Example
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::module::Module;
-    /// use inkwell::builder::Builder;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::module::Module;
+    /// use wasmer_inkwell::builder::Builder;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_module");
@@ -103,9 +103,9 @@ impl<'ctx> BasicBlock<'ctx> {
     ///
     /// # Example
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::module::Module;
-    /// use inkwell::builder::Builder;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::module::Module;
+    /// use wasmer_inkwell::builder::Builder;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_module");
@@ -139,9 +139,9 @@ impl<'ctx> BasicBlock<'ctx> {
     ///
     /// # Example
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::module::Module;
-    /// use inkwell::builder::Builder;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::module::Module;
+    /// use wasmer_inkwell::builder::Builder;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_module");
@@ -176,9 +176,9 @@ impl<'ctx> BasicBlock<'ctx> {
     ///
     /// # Example
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::module::Module;
-    /// use inkwell::builder::Builder;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::module::Module;
+    /// use wasmer_inkwell::builder::Builder;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_module");
@@ -212,10 +212,10 @@ impl<'ctx> BasicBlock<'ctx> {
     ///
     /// # Example
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::module::Module;
-    /// use inkwell::builder::Builder;
-    /// use inkwell::values::InstructionOpcode;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::module::Module;
+    /// use wasmer_inkwell::builder::Builder;
+    /// use wasmer_inkwell::values::InstructionOpcode;
     ///
     /// let context = Context::create();
     /// let builder = context.create_builder();
@@ -248,10 +248,10 @@ impl<'ctx> BasicBlock<'ctx> {
     ///
     /// # Example
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::module::Module;
-    /// use inkwell::builder::Builder;
-    /// use inkwell::values::InstructionOpcode;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::module::Module;
+    /// use wasmer_inkwell::builder::Builder;
+    /// use wasmer_inkwell::values::InstructionOpcode;
     ///
     /// let context = Context::create();
     /// let builder = context.create_builder();
@@ -284,10 +284,10 @@ impl<'ctx> BasicBlock<'ctx> {
     ///
     /// # Example
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::module::Module;
-    /// use inkwell::builder::Builder;
-    /// use inkwell::values::InstructionOpcode;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::module::Module;
+    /// use wasmer_inkwell::builder::Builder;
+    /// use wasmer_inkwell::values::InstructionOpcode;
     ///
     /// let context = Context::create();
     /// let builder = context.create_builder();
@@ -325,9 +325,9 @@ impl<'ctx> BasicBlock<'ctx> {
     ///
     /// # Example
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::module::Module;
-    /// use inkwell::builder::Builder;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::module::Module;
+    /// use wasmer_inkwell::builder::Builder;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_module");
@@ -364,9 +364,9 @@ impl<'ctx> BasicBlock<'ctx> {
     ///
     /// # Example
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::module::Module;
-    /// use inkwell::builder::Builder;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::module::Module;
+    /// use wasmer_inkwell::builder::Builder;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_module");
@@ -395,9 +395,9 @@ impl<'ctx> BasicBlock<'ctx> {
     ///
     /// # Example
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::module::Module;
-    /// use inkwell::builder::Builder;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::module::Module;
+    /// use wasmer_inkwell::builder::Builder;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_module");
@@ -419,7 +419,7 @@ impl<'ctx> BasicBlock<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let builder = context.create_builder();
@@ -447,7 +447,7 @@ impl<'ctx> BasicBlock<'ctx> {
     /// # Example
     ///
     /// ```
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let builder = context.create_builder();
@@ -482,9 +482,9 @@ impl<'ctx> BasicBlock<'ctx> {
     /// The following example,
     ///
     /// ```no_run
-    /// use inkwell::AddressSpace;
-    /// use inkwell::context::Context;
-    /// use inkwell::values::BasicValue;
+    /// use wasmer_inkwell::AddressSpace;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::values::BasicValue;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("ivs");

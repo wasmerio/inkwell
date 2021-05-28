@@ -135,9 +135,9 @@ impl<'ctx> ExecutionEngine<'ctx> {
     ///
     /// # Example
     /// ```no_run
-    /// use inkwell::targets::{InitializationConfig, Target};
-    /// use inkwell::context::Context;
-    /// use inkwell::OptimizationLevel;
+    /// use wasmer_inkwell::targets::{InitializationConfig, Target};
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::OptimizationLevel;
     ///
     /// Target::initialize_native(&InitializationConfig::default()).unwrap();
     ///
@@ -183,9 +183,9 @@ impl<'ctx> ExecutionEngine<'ctx> {
     /// The method will be `Ok(())` if the module does not belong to an `ExecutionEngine` already and `Err(())` otherwise.
     ///
     /// ```rust,no_run
-    /// use inkwell::targets::{InitializationConfig, Target};
-    /// use inkwell::context::Context;
-    /// use inkwell::OptimizationLevel;
+    /// use wasmer_inkwell::targets::{InitializationConfig, Target};
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::OptimizationLevel;
     ///
     /// Target::initialize_native(&InitializationConfig::default()).unwrap();
     ///
@@ -253,9 +253,9 @@ impl<'ctx> ExecutionEngine<'ctx> {
     ///
     ///
     /// ```rust,no_run
-    /// # use inkwell::targets::{InitializationConfig, Target};
-    /// # use inkwell::context::Context;
-    /// # use inkwell::OptimizationLevel;
+    /// # use wasmer_inkwell::targets::{InitializationConfig, Target};
+    /// # use wasmer_inkwell::context::Context;
+    /// # use wasmer_inkwell::OptimizationLevel;
     /// # Target::initialize_native(&InitializationConfig::default()).unwrap();
     /// let context = Context::create();
     /// let module = context.create_module("test");

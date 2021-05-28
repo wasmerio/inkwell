@@ -10,13 +10,13 @@
 //! let debug_metadata_version = context.i32_type().const_int(3, false);
 //! module.add_basic_value_flag(
 //!     "Debug Info Version",
-//!     inkwell::module::FlagBehavior::Warning,
+//!     wasmer_inkwell::module::FlagBehavior::Warning,
 //!     debug_metadata_version,
 //! );
 //! let builder = context.create_builder();
 //! let (dibuilder, compile_unit) = module.create_debug_info_builder(
 //!     true,
-//!     /* language */ inkwell::debug_info::DWARFSourceLanguage::C,
+//!     /* language */ wasmer_inkwell::debug_info::DWARFSourceLanguage::C,
 //!     /* filename */ "source_file",
 //!     /* directory */ ".",
 //!     /* producer */ "my llvm compiler frontend",
@@ -24,7 +24,7 @@
 //!     /* compiler command line flags */ "",
 //!     /* runtime_ver */ 0,
 //!     /* split_name */ "",
-//!     /* kind */ inkwell::debug_info::DWARFEmissionKind::Full,
+//!     /* kind */ wasmer_inkwell::debug_info::DWARFEmissionKind::Full,
 //!     /* dwo_id */ 0,
 //!     /* split_debug_inling */ false,
 //!     /* debug_info_for_profiling */ false,
@@ -36,13 +36,13 @@
 //!      "type_name",
 //!      0_u64,
 //!      0x00,
-//!      inkwell::debug_info::DIFlags::Public,
+//!      wasmer_inkwell::debug_info::DIFlags::Public,
 //!  ).unwrap();
 //!  let subroutine_type = dibuilder.create_subroutine_type(
 //!      compile_unit.get_file(),
 //!      /* return type */ Some(ditype.as_type()),
 //!      /* parameter types */ &[],
-//!      inkwell::debug_info::DIFlags::Public,
+//!      wasmer_inkwell::debug_info::DIFlags::Public,
 //!  );
 //!  let func_scope: DISubprogram<'_> = dibuilder.create_function(
 //!      /* scope */ compile_unit.as_debug_info_scope(),
@@ -54,7 +54,7 @@
 //!      /* is_local_to_unit */ true,
 //!      /* is_definition */ true,
 //!      /* scope_line */ 0,
-//!      /* flags */ inkwell::debug_info::DIFlags::Public,
+//!      /* flags */ wasmer_inkwell::debug_info::DIFlags::Public,
 //!      /* is_optimized */ false,
 //!  );
 //! ```
@@ -80,14 +80,14 @@
 //! builder.set_current_debug_location(&context, loc);
 //!
 //! // Create global variable
-//! let gv = module.add_global(context.i64_type(), Some(inkwell::AddressSpace::Global), "gv");
+//! let gv = module.add_global(context.i64_type(), Some(wasmer_inkwell::AddressSpace::Global), "gv");
 //!
 //!
 //! let const_v = di.create_constant_expression(10);
 //!
 //! let gv_debug = di.create_global_variable_expression(cu.get_file().as_debug_info_scope(), "gv", "", cu.get_file(), 1, ditype.as_type(), true, Some(const_v), None, 8);
 //!
-//! let meta_value: inkwell::values::BasicMetadataValueEnum = gv_debug.as_metadata_value(&context).into();
+//! let meta_value: wasmer_inkwell::values::BasicMetadataValueEnum = gv_debug.as_metadata_value(&context).into();
 //! let metadata = context.metadata_node(&[meta_value]);
 //! gv.set_metadata(metadata, 0);//dbg
 //!

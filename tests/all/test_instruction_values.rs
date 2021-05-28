@@ -1,6 +1,6 @@
-use inkwell::context::Context;
-use inkwell::values::{BasicValue, InstructionOpcode::*};
-use inkwell::{AddressSpace, AtomicOrdering, AtomicRMWBinOp, FloatPredicate, IntPredicate};
+use wasmer_inkwell::context::Context;
+use wasmer_inkwell::values::{BasicValue, InstructionOpcode::*};
+use wasmer_inkwell::{AddressSpace, AtomicOrdering, AtomicRMWBinOp, FloatPredicate, IntPredicate};
 
 #[test]
 fn test_operands() {

@@ -1,5 +1,5 @@
 [package]
-name = "wasmer-inkwell"
+name = "wasmer_inkwell"
 version = "0.2.0-alpha.1"
 authors = ["Daniel Kolsoi <thadan64@gmail.com>", "Wasmer Engineering Team <engineering@wasmer.io>"]
 description = "Inkwell aims to help you pen your own programming languages by safely wrapping llvm-sys."

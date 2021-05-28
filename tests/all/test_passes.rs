@@ -1,8 +1,8 @@
-extern crate inkwell;
+extern crate wasmer_inkwell;
 
-use self::inkwell::OptimizationLevel::Aggressive;
-use self::inkwell::context::Context;
-use self::inkwell::passes::{PassManagerBuilder, PassManager, PassRegistry};
+use self::wasmer_inkwell::OptimizationLevel::Aggressive;
+use self::wasmer_inkwell::context::Context;
+use self::wasmer_inkwell::passes::{PassManagerBuilder, PassManager, PassRegistry};
 
 #[test]
 fn test_init_all_passes_for_module() {

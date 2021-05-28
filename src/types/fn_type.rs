@@ -30,8 +30,8 @@ impl<'ctx> FunctionType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::AddressSpace;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::AddressSpace;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -49,7 +49,7 @@ impl<'ctx> FunctionType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -68,7 +68,7 @@ impl<'ctx> FunctionType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -99,7 +99,7 @@ impl<'ctx> FunctionType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -120,7 +120,7 @@ impl<'ctx> FunctionType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -142,7 +142,7 @@ impl<'ctx> FunctionType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -166,7 +166,7 @@ impl<'ctx> FunctionType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();

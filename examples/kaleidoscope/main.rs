@@ -12,7 +12,7 @@
 //! Both the `Parser` and the `Compiler` may fail, in which case they would return
 //! an error represented by `Result<T, &'static str>`, for easier error reporting.
 
-extern crate inkwell;
+extern crate wasmer_inkwell;
 
 use std::borrow::Borrow;
 use std::collections::HashMap;
@@ -21,13 +21,13 @@ use std::iter::Peekable;
 use std::str::Chars;
 use std::ops::DerefMut;
 
-use self::inkwell::builder::Builder;
-use self::inkwell::context::Context;
-use self::inkwell::module::Module;
-use self::inkwell::passes::PassManager;
-use self::inkwell::types::BasicMetadataTypeEnum;
-use self::inkwell::values::{BasicValue, BasicMetadataValueEnum, FloatValue, FunctionValue, PointerValue};
-use self::inkwell::{OptimizationLevel, FloatPredicate};
+use self::wasmer_inkwell::builder::Builder;
+use self::wasmer_inkwell::context::Context;
+use self::wasmer_inkwell::module::Module;
+use self::wasmer_inkwell::passes::PassManager;
+use self::wasmer_inkwell::types::BasicMetadataTypeEnum;
+use self::wasmer_inkwell::values::{BasicValue, BasicMetadataValueEnum, FloatValue, FunctionValue, PointerValue};
+use self::wasmer_inkwell::{OptimizationLevel, FloatPredicate};
 
 use crate::Token::*;
 

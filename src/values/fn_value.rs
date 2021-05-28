@@ -312,8 +312,8 @@ impl<'ctx> FunctionValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::attributes::AttributeLoc;
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::attributes::AttributeLoc;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_mod");
@@ -338,8 +338,8 @@ impl<'ctx> FunctionValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::attributes::AttributeLoc;
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::attributes::AttributeLoc;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_mod");
@@ -366,8 +366,8 @@ impl<'ctx> FunctionValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::attributes::AttributeLoc;
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::attributes::AttributeLoc;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_mod");
@@ -391,8 +391,8 @@ impl<'ctx> FunctionValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::attributes::AttributeLoc;
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::attributes::AttributeLoc;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_mod");
@@ -416,8 +416,8 @@ impl<'ctx> FunctionValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::attributes::AttributeLoc;
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::attributes::AttributeLoc;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_mod");
@@ -451,8 +451,8 @@ impl<'ctx> FunctionValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::attributes::AttributeLoc;
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::attributes::AttributeLoc;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_mod");

@@ -54,8 +54,8 @@ pub trait BasicType<'ctx>: AnyType<'ctx> {
     /// # Example:
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::types::BasicType;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::types::BasicType;
     ///
     /// let context = Context::create();
     /// let int = context.i32_type();
@@ -74,8 +74,8 @@ pub trait BasicType<'ctx>: AnyType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::types::BasicType;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::types::BasicType;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -94,8 +94,8 @@ pub trait BasicType<'ctx>: AnyType<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::types::BasicType;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::types::BasicType;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type();
@@ -112,8 +112,8 @@ pub trait BasicType<'ctx>: AnyType<'ctx> {
     ///
     /// Example:
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::types::BasicType;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::types::BasicType;
     ///
     /// let context = Context::create();
     /// let int = context.i32_type();
@@ -131,9 +131,9 @@ pub trait BasicType<'ctx>: AnyType<'ctx> {
     ///
     /// Example:
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::types::BasicType;
-    /// use inkwell::AddressSpace;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::types::BasicType;
+    /// use wasmer_inkwell::AddressSpace;
     ///
     /// let context = Context::create();
     /// let int = context.i32_type();

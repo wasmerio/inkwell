@@ -1,6 +1,6 @@
-use inkwell::{AddressSpace, OptimizationLevel};
-use inkwell::context::Context;
-use inkwell::targets::{ByteOrdering, CodeModel, FileType, InitializationConfig, RelocMode, Target, TargetData, TargetMachine, TargetTriple};
+use wasmer_inkwell::{AddressSpace, OptimizationLevel};
+use wasmer_inkwell::context::Context;
+use wasmer_inkwell::targets::{ByteOrdering, CodeModel, FileType, InitializationConfig, RelocMode, Target, TargetData, TargetMachine, TargetTriple};
 
 use regex::Regex;
 

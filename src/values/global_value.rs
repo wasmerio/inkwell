@@ -149,7 +149,7 @@ impl<'ctx> GlobalValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let builder = context.create_builder();

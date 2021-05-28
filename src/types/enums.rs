@@ -437,8 +437,8 @@ impl<'ctx> BasicTypeEnum<'ctx> {
     ///
     /// # Example
     /// ```
-    /// use inkwell::context::Context;
-    /// use crate::inkwell::types::BasicType;
+    /// use wasmer_inkwell::context::Context;
+    /// use crate::wasmer_inkwell::types::BasicType;
     ///
     /// let context = Context::create();
     /// let f32_type = context.f32_type().as_basic_type_enum();

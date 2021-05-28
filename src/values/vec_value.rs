@@ -26,7 +26,7 @@ impl<'ctx> VectorValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let i8_type = context.i8_type();
@@ -101,7 +101,7 @@ impl<'ctx> VectorValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let string = context.const_string(b"my_string", false);

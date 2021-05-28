@@ -1,8 +1,8 @@
-use inkwell::{AddressSpace, OptimizationLevel, IntPredicate};
-use inkwell::context::Context;
-use inkwell::execution_engine::FunctionLookupError;
-use inkwell::values::BasicValue;
-use inkwell::targets::{InitializationConfig, Target};
+use wasmer_inkwell::{AddressSpace, OptimizationLevel, IntPredicate};
+use wasmer_inkwell::context::Context;
+use wasmer_inkwell::execution_engine::FunctionLookupError;
+use wasmer_inkwell::values::BasicValue;
+use wasmer_inkwell::targets::{InitializationConfig, Target};
 
 type Thunk = unsafe extern "C" fn();
 

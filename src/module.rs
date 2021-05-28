@@ -175,9 +175,9 @@ impl<'ctx> Module<'ctx> {
     ///
     /// # Example
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::module::{Module, Linkage};
-    /// use inkwell::types::FunctionType;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::module::{Module, Linkage};
+    /// use wasmer_inkwell::types::FunctionType;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_module");
@@ -206,8 +206,8 @@ impl<'ctx> Module<'ctx> {
     ///
     /// # Example
     /// ```no_run
-    /// use inkwell::context::{Context, ContextRef};
-    /// use inkwell::module::Module;
+    /// use wasmer_inkwell::context::{Context, ContextRef};
+    /// use wasmer_inkwell::module::Module;
     ///
     /// let local_context = Context::create();
     /// let local_module = local_context.create_module("my_module");
@@ -224,8 +224,8 @@ impl<'ctx> Module<'ctx> {
     ///
     /// # Example
     /// ```rust,no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::module::Module;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::module::Module;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_mod");
@@ -248,8 +248,8 @@ impl<'ctx> Module<'ctx> {
     ///
     /// # Example
     /// ```rust,no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::module::Module;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::module::Module;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_mod");
@@ -272,8 +272,8 @@ impl<'ctx> Module<'ctx> {
     ///
     /// # Example
     /// ```rust,no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::module::Module;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::module::Module;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_mod");
@@ -300,7 +300,7 @@ impl<'ctx> Module<'ctx> {
     /// # Example
     ///
     /// ```rust,no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_module");
@@ -332,8 +332,8 @@ impl<'ctx> Module<'ctx> {
     /// # Example
     ///
     /// ```rust,no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::targets::{Target, TargetTriple};
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::targets::{Target, TargetTriple};
     ///
     /// Target::initialize_x86(&Default::default());
     /// let context = Context::create();
@@ -358,8 +358,8 @@ impl<'ctx> Module<'ctx> {
     /// # Example
     ///
     /// ```rust,no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::targets::{Target, TargetTriple};
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::targets::{Target, TargetTriple};
     ///
     /// Target::initialize_x86(&Default::default());
     /// let context = Context::create();
@@ -385,9 +385,9 @@ impl<'ctx> Module<'ctx> {
     ///
     /// # Example
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::module::Module;
-    /// use inkwell::targets::{InitializationConfig, Target};
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::module::Module;
+    /// use wasmer_inkwell::targets::{InitializationConfig, Target};
     ///
     /// Target::initialize_native(&InitializationConfig::default()).expect("Failed to initialize native target");
     ///
@@ -436,9 +436,9 @@ impl<'ctx> Module<'ctx> {
     ///
     /// # Example
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::module::Module;
-    /// use inkwell::targets::{InitializationConfig, Target};
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::module::Module;
+    /// use wasmer_inkwell::targets::{InitializationConfig, Target};
     ///
     /// Target::initialize_native(&InitializationConfig::default()).expect("Failed to initialize native target");
     ///
@@ -488,10 +488,10 @@ impl<'ctx> Module<'ctx> {
     ///
     /// # Example
     /// ```no_run
-    /// use inkwell::OptimizationLevel;
-    /// use inkwell::context::Context;
-    /// use inkwell::module::Module;
-    /// use inkwell::targets::{InitializationConfig, Target};
+    /// use wasmer_inkwell::OptimizationLevel;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::module::Module;
+    /// use wasmer_inkwell::targets::{InitializationConfig, Target};
     ///
     /// Target::initialize_native(&InitializationConfig::default()).expect("Failed to initialize native target");
     ///
@@ -542,8 +542,8 @@ impl<'ctx> Module<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::AddressSpace;
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::AddressSpace;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("mod");
@@ -573,7 +573,7 @@ impl<'ctx> Module<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// use std::path::Path;
     ///
@@ -619,7 +619,7 @@ impl<'ctx> Module<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("mod");
@@ -688,9 +688,9 @@ impl<'ctx> Module<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::OptimizationLevel;
-    /// use inkwell::context::Context;
-    /// use inkwell::targets::{InitializationConfig, Target};
+    /// use wasmer_inkwell::OptimizationLevel;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::targets::{InitializationConfig, Target};
     ///
     /// Target::initialize_native(&InitializationConfig::default()).expect("Failed to initialize native target");
     ///
@@ -715,9 +715,9 @@ impl<'ctx> Module<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::OptimizationLevel;
-    /// use inkwell::context::Context;
-    /// use inkwell::targets::{InitializationConfig, Target};
+    /// use wasmer_inkwell::OptimizationLevel;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::targets::{InitializationConfig, Target};
     ///
     /// Target::initialize_native(&InitializationConfig::default()).expect("Failed to initialize native target");
     ///
@@ -804,7 +804,7 @@ impl<'ctx> Module<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_module");
@@ -851,7 +851,7 @@ impl<'ctx> Module<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_module");
@@ -896,7 +896,7 @@ impl<'ctx> Module<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_module");
@@ -948,8 +948,8 @@ impl<'ctx> Module<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::AddressSpace;
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::AddressSpace;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let i8_type = context.i8_type();
@@ -980,8 +980,8 @@ impl<'ctx> Module<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::AddressSpace;
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::AddressSpace;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("mod");
@@ -1012,8 +1012,8 @@ impl<'ctx> Module<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::AddressSpace;
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::AddressSpace;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("mod");
@@ -1045,9 +1045,9 @@ impl<'ctx> Module<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::module::Module;
-    /// use inkwell::memory_buffer::MemoryBuffer;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::module::Module;
+    /// use wasmer_inkwell::memory_buffer::MemoryBuffer;
     /// use std::path::Path;
     ///
     /// let path = Path::new("foo/bar.bc");
@@ -1086,8 +1086,8 @@ impl<'ctx> Module<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::module::Module;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::module::Module;
     /// use std::path::Path;
     ///
     /// let path = Path::new("foo/bar.bc");
@@ -1110,7 +1110,7 @@ impl<'ctx> Module<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_module");
@@ -1134,7 +1134,7 @@ impl<'ctx> Module<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_module");
@@ -1155,7 +1155,7 @@ impl<'ctx> Module<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_mod");
@@ -1186,7 +1186,7 @@ impl<'ctx> Module<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("my_mod");
@@ -1212,7 +1212,7 @@ impl<'ctx> Module<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("mod");

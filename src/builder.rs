@@ -45,7 +45,7 @@ impl<'ctx> Builder<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// // A simple function which returns its argument:
     /// let context = Context::create();
@@ -77,7 +77,7 @@ impl<'ctx> Builder<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// // This builds a simple function which returns a struct (tuple) of two ints.
     /// let context = Context::create();
@@ -114,7 +114,7 @@ impl<'ctx> Builder<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// // A simple function which calls itself:
     /// let context = Context::create();
@@ -212,8 +212,8 @@ impl<'ctx> Builder<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::AddressSpace;
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::AddressSpace;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let builder = context.create_builder();
@@ -266,8 +266,8 @@ impl<'ctx> Builder<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::AddressSpace;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::AddressSpace;
     ///
     /// // Builds a function which diffs two pointers
     /// let context = Context::create();
@@ -318,8 +318,8 @@ impl<'ctx> Builder<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::AddressSpace;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::AddressSpace;
     ///
     /// // Builds a function which takes an i32 pointer and stores a 7 in it.
     /// let context = Context::create();
@@ -353,8 +353,8 @@ impl<'ctx> Builder<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
-    /// use inkwell::AddressSpace;
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::AddressSpace;
     ///
     /// // Builds a function which takes an i32 pointer and returns the pointed at i32.
     /// let context = Context::create();
@@ -654,7 +654,7 @@ impl<'ctx> Builder<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("bc");
@@ -964,7 +964,7 @@ impl<'ctx> Builder<'ctx> {
     /// And in Inkwell, the corresponding function would look roughly like:
     ///
     /// ```rust,no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// // Setup
     /// let context = Context::create();
@@ -1036,7 +1036,7 @@ impl<'ctx> Builder<'ctx> {
     /// In Inkwell, the corresponding functions would look roughly like:
     ///
     /// ```rust,no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// // Setup
     /// let context = Context::create();
@@ -1351,7 +1351,7 @@ impl<'ctx> Builder<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("av");
@@ -1415,7 +1415,7 @@ impl<'ctx> Builder<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("av");
@@ -1472,7 +1472,7 @@ impl<'ctx> Builder<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("av");
@@ -1509,7 +1509,7 @@ impl<'ctx> Builder<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let module = context.create_module("av");
@@ -1711,8 +1711,8 @@ impl<'ctx> Builder<'ctx> {
     /// # Example
     ///
     /// ```
-    /// use inkwell::context::Context;
-    /// use inkwell::{AddressSpace, AtomicOrdering, AtomicRMWBinOp};
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::{AddressSpace, AtomicOrdering, AtomicRMWBinOp};
     /// let context = Context::create();
     /// let module = context.create_module("rmw");
     /// let void_type = context.void_type();
@@ -1761,8 +1761,8 @@ impl<'ctx> Builder<'ctx> {
     /// # Example
     ///
     /// ```
-    /// use inkwell::context::Context;
-    /// use inkwell::{AddressSpace, AtomicOrdering};
+    /// use wasmer_inkwell::context::Context;
+    /// use wasmer_inkwell::{AddressSpace, AtomicOrdering};
     /// let context = Context::create();
     /// let module = context.create_module("cmpxchg");
     /// let void_type = context.void_type();

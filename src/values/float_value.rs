@@ -128,7 +128,7 @@ impl<'ctx> FloatValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f64_type = context.f64_type();
@@ -145,7 +145,7 @@ impl<'ctx> FloatValue<'ctx> {
     /// # Example
     ///
     /// ```no_run
-    /// use inkwell::context::Context;
+    /// use wasmer_inkwell::context::Context;
     ///
     /// let context = Context::create();
     /// let f64_type = context.f64_type();

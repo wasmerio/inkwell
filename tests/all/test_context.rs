@@ -1,5 +1,5 @@
-use inkwell::AddressSpace;
-use inkwell::context::Context;
+use wasmer_inkwell::AddressSpace;
+use wasmer_inkwell::context::Context;
 
 #[test]
 fn test_no_context_double_free() {

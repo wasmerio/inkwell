@@ -1,7 +1,7 @@
-use inkwell::AddressSpace;
-use inkwell::context::Context;
-use inkwell::values::AnyValue;
-use inkwell::types::BasicType;
+use wasmer_inkwell::AddressSpace;
+use wasmer_inkwell::context::Context;
+use wasmer_inkwell::values::AnyValue;
+use wasmer_inkwell::types::BasicType;
 
 #[test]
 fn test_struct_type() {
