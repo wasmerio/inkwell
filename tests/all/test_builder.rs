@@ -210,8 +210,8 @@ fn test_build_invoke_catch_all() {
 
 #[test]
 fn landing_pad_filter() {
-    use inkwell::module::Linkage;
-    use inkwell::values::AnyValue;
+    use wasmer_inkwell::module::Linkage;
+    use wasmer_inkwell::values::AnyValue;
 
     let context = Context::create();
     let module = context.create_module("sum");
